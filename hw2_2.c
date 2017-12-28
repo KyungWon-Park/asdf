@@ -13,16 +13,16 @@ void partplot(float start, float end)
 	switch (cnt)
 	{
 		case 0:
-			fp = fopen("hw2_1_output_0.txt", "w");
+			fp = fopen("hw2_2_output_0.txt", "w");
 			break;
 		case 1:
-			fp = fopen("hw2_1_output_1.txt", "w");
+			fp = fopen("hw2_2_output_1.txt", "w");
 			break;
 		case 2:
-			fp = fopen("hw2_1_output_2.txt", "w");
+			fp = fopen("hw2_2_output_2.txt", "w");
 			break;
 		case 3:
-			fp = fopen("hw2_1_output_3.txt", "w");
+			fp = fopen("hw2_2_output_3.txt", "w");
 			break;
 	}
 

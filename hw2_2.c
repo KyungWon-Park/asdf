@@ -27,7 +27,7 @@ int main(void)
 
 		for (int i = 0; i < ITERATION; i++)
 		{
-			fprintf(fp, " %lf %lf\n", mu, y[i]);
+			fprintf(fp, " %f %f\n", mu, (float) y[i]);
 		}
 	}
 	fclose(fp);

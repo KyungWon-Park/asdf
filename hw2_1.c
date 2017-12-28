@@ -5,15 +5,30 @@
 
 #define ITERATION 2000
 
-int main(void)
-{
-	double *y = malloc(sizeof(double) * ITERATION);
+int cnt = 0;
 
-	FILE *fp = fopen("hw2_1_output.txt", "w");
+void partplot(float start, float end)
+{
+	FILE *fp;
+	switch (cnt)
+	{
+		case 0:
+			fp = fopen("hw2_1_output_0.txt", "w");
+			break;
+		case 1:
+			fp = fopen("hw2_1_output_1.txt", "w");
+			break;
+		case 2:
+			fp = fopen("hw2_1_output_2.txt", "w");
+			break;
+	}
+
 	assert(fp != NULL && "MALLOC FAILED!\n");
 
+	double *y = malloc(sizeof(double) * ITERATION);
+
 	fprintf(fp, "# X Y\n");
-	for (double mu = -4; mu < -1; mu += 0.0001)
+	for (double mu = start; mu < end; mu += 0.0001)
 	{
 		y[0] = 0.1;
 		for (int i = 0; i < ITERATION; i++)
@@ -33,5 +48,15 @@ int main(void)
 	}
 	fclose(fp);
 	free(y);
+	cnt++;
+
+	return;
+}
+
+int main(void)
+{
+	partplot(-4, -3);
+	partplot(-3, -2);
+	partplot(-2, -1);
 	return 0;
 }
